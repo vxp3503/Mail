@@ -43,14 +43,14 @@ function load_mailbox(mailbox) {
 
         item.innerHTML = `<div class="card-body" id="item-${element.id}">
         
-        ${element.subject} | ${sender_recipients} | ${element.timestamp}
+        ${element.subject} | ${element.sender} | ${element.timestamp}
         <br>
         ${element.body.slice(0, 100)}
       </div>`;
         document.querySelector("#emails-view").appendChild(item);
-        item.addEventListener("click", () => {
-          show_mail(element.id, mailbox);
-        });
+        // item.addEventListener("click", () => {
+        //   show_mail(element.id, mailbox);
+        // });
       });
     });
 }
