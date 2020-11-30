@@ -41,7 +41,7 @@ function load_mailbox(mailbox) {
         var item = document.createElement("div");
         item.className = `card   ${is_read} my-1 items`;
 
-        item.innerHTML = `<div class="card-body" id="item-${element.id}">
+        item.innerHTML = `<div class="card-body" style="background-color: aqua"; id="item-${element.id}">
         
         ${element.subject} | ${element.sender} | ${element.timestamp}
         <br>
