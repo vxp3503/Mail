@@ -34,6 +34,12 @@ function load_mailbox(mailbox) {
     .then(response => response.json())
     .then(emails => {
       emails.forEach((element) => {
+        if (mailbox != 'sent'){
+          viki= element.sender
+        }
+        else{
+          viki=element.recipients;
+        }
         if (mailbox == 'inbox') {
           if (element.read) is_read = "read";
           else is_read = "";
@@ -43,7 +49,7 @@ function load_mailbox(mailbox) {
 
         item.innerHTML = `<div class="card-body" style="background-color: aqua"; id="item-${element.id}">
         
-        ${element.subject} | ${element.sender} | ${element.timestamp}
+        ${element.subject} | ${viki} | ${element.timestamp}
         <br>
         ${element.body.slice(0, 100)}
       </div>`;
